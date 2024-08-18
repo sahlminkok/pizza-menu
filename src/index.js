@@ -31,6 +31,19 @@ function Menu() {
   );
 }
 
+function Pizza() {
+  return (
+    <div className="pizza">
+      <img src="pizzas/margherita.jpg" alt="margherita" />
+      <div>
+        <h3>Pizza Margherita</h3>
+        <p>ingredients</p>
+        <span>20</span>
+      </div>
+    </div>
+  );
+}
+
 function Footer() {
   const hour = new Date().getHours();
   const openHour = 8;
@@ -42,15 +55,6 @@ function Footer() {
       {new Date().toLocaleTimeString()} We are currently{" "}
       {isOpen ? "open" : "close"}
     </footer>
-  );
-}
-
-export default function Pizza() {
-  return (
-    <div>
-      <img src="pizzas/margherita.jpg" alt="margherita" />
-      <h3>Pizza Margherita</h3>
-    </div>
   );
 }
 
