@@ -69,23 +69,25 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <ul className="pizzas">
+        {pizzaData.map((pizza) => (
+          <Pizza pizzaObject={pizza} key={pizza.name} />
+        ))}
+      </ul>
     </main>
   );
 }
 
-function Pizza() {
+function Pizza({ pizzaObject }) {
   return (
-    <div className="pizza">
-      <img src="pizzas/margherita.jpg" alt="margherita" />
+    <li className="pizza">
+      <img src={pizzaObject.photoName} alt={pizzaObject.name} />
       <div>
-        <h3>Pizza Margherita</h3>
-        <p>ingredients</p>
-        <span>20</span>
+        <h3>{pizzaObject.name}</h3>
+        <p>{pizzaObject.ingredients}</p>
+        <span>{pizzaObject.price}</span>
       </div>
-    </div>
+    </li>
   );
 }
 
